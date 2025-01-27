@@ -1,0 +1,36 @@
+/* Styles for the links */
+
+a {
+    text-decoration: none;
+    position: relative;
+    
+}
+
+a:hover{
+    text-decoration: none;
+    /* border-bottom: 6px solid black; */
+}
+
+a::after{
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    /* right: 0; */
+    height: 2px;
+    background-color: black;
+    z-index: 10;
+    
+
+}
+
+a:hover::after{
+    width: 100%;
+    animation: link 5s ease-in ;
+}
+
+@keyframes link {
+    100%{
+        right: 0;
+    }
+}
