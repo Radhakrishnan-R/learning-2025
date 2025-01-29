@@ -1,4 +1,4 @@
-
+import Link from 'next/link';
 
 import React from 'react'
 //import { useEffect, useState } from 'react';
@@ -28,7 +28,9 @@ const ProductsId =  async({params}) => {
 
 
   return (
-    <div>ProductsId {id}</div>
+    <div>ProductsId {id}
+    <Link href="/">Back</Link>
+    </div>
   )
 }
 
