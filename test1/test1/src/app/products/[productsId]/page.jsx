@@ -10,6 +10,13 @@ export const generateMetadata = async({params}) => {
     }
 }
 
+async function randomNumber(number){
+  const newNumber = Math.floor(Math.random() * number);
+  return(newNumber);
+  
+}
+
+
 const ProductsId =  async({params}) => {
 
     const id = (await params).productsId;
@@ -21,6 +28,12 @@ const ProductsId =  async({params}) => {
     //   console.log(params.productsId);
     // }, [params])
 
+    
+    const number = await randomNumber(2);
+    console.log(number)
+    if(number === 1){
+      throw new Error("no products with this id"); 
+    }
    
     
 

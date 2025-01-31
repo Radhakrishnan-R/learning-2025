@@ -1,6 +1,14 @@
+"use client"
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const ProductPage = () => {
+
+  const router = useRouter();
+  function handleClick() {
+    router.back();
+  }
 
 
   const product = [
@@ -18,6 +26,8 @@ const ProductPage = () => {
     },
   ]
 
+  
+
   return (
     <div className="w-full text-4xl flex gap-4 h-screen justify-center items-center">
         {
@@ -25,6 +35,8 @@ const ProductPage = () => {
             <Link key={i} href={`/products/${item.id}`}>{item.item}</Link>
           ))
         }
+
+        <button onClick={handleClick}>Place your order</button>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { usePathname } from "next/navigation";
 import "./globals.css"
 import Link from "next/link";
+import { useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,6 +23,8 @@ const geistMono = Geist_Mono({
 // };
 
 export default function RootLayout({ children }) {
+
+  const [input, setInput] = useState("")
 
 
   const pathname = usePathname();
@@ -53,6 +56,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <input className="border border-black" value={input} onChange={(e) => setInput(e.target.value)}></input>
         <div className=" space-x-4 w-full text-center" >
         {
           nav.map((item,i) => (

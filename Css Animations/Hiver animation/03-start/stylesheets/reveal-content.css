@@ -1,4 +1,38 @@
 /* Styles for highlighting the hovered options */
 
+.more-info{
+    visibility: hidden;
+}
+
+.call-to-action{
+    transform: scale(0.2);
+    visibility: hidden;
+}
+
+.highlighted{
+    background-color: rgb(198, 229, 255);
+    border: 1px solid black;
+    transform: scale(1.2);
+}
+
+.highlighted .call-to-action{
+    visibility: visible;
+    transform: translateY(2.2em);
+}
+
+.highlighted .badge{
+    transform: translateY(-4em);
+}
+
+.highlighted h2{
+    transform: translateY(-3em);
+}
+
+.highlighted .summary{
+    transform: translateY(-3em);
+}
+
+
+
 
 

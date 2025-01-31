@@ -39,5 +39,43 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="./javascripts/highlight.js"></script>
+    <script type="text/javascript">
+      const card = document.querySelectorAll(".option");
+      console.log(card);
+
+      const active = document.querySelector(".highlighted");
+      let activeCards = [];
+
+      card.forEach((item, i) => {
+        item.addEventListener("mouseenter", (e) => {
+          console.log("hello");
+          active.classList.remove("highlighted");
+          item.classList.add("highlighted")
+          activeCards.push(item);
+        })
+
+        item.addEventListener("mouseleave", () => {
+          console.log("mouseout")
+         
+            item.classList.remove("highlighted");
+            activeCards = [];
+            console.log(activeCards);
+            
+            
+              if(activeCards.length <= 0){
+              setTimeout(() => {
+              active.classList.add("highlighted");
+            }, 1000);
+          }
+           
+            
+
+            
+
+          
+          
+        })
+      })
+    </script>
   </body>
 </html>
